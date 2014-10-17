@@ -32,7 +32,7 @@ prg[1]="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 for file in "${prg[@]}"
 do
- [[ -x "$file" ]] && file "$file"|grep 'Mach-O' &>/dev/null && \
+ [[ -x "$file" ]] && file "$file" | grep 'Mach-O' &>/dev/null && \
   { echo -e "--- \e[31mPreparing ${file##*/}\e[0m ---" && \
     mv "$file" "$file.bin" && cp "$0" "$file" && chmod 755 "$file" && \
     echo -e "--- \e[32mDone modifying ${file##*/}\e[0m ---\n" || \
