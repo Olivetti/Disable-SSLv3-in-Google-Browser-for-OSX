@@ -6,6 +6,21 @@
 # by Olivetti @electroplax
 # https://github.com/Olivetti/Disable-SSLv3-in-Google-Browser-for-OSX
 
+### seems not working
+# https://code.google.com/p/chromium/issues/detail?id=71511
+#
+# defaults write org.chromium.chromium org.chromium.ssl.ssl2 -bool no
+# defaults write org.chromium.chromium org.chromium.ssl.ssl3 -bool no
+# defaults write org.chromium.chromium org.chromium.ssl.tls1 -bool yes
+#
+# defaults write com.google.chrome org.chromium.ssl.ssl2 -bool no
+# defaults write com.google.chrome org.chromium.ssl.ssl3 -bool no
+# defaults write com.google.chrome org.chromium.ssl.tls1 -bool yes
+#
+# #defaults write com.apple.security.revocation CRLStyle None
+# #defaults write com.apple.security.revocation OCSPStye None
+###
+
 #open -a "$prg" --args --ssl-version-min=tls1
 
 [[ "$1" = "-h" ]] && echo "Syntax: ${0##*/} [-h]" && exit 1
