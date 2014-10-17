@@ -4,7 +4,7 @@
 # Disable SSLv3 in Google Browser for OSX - test at https://poodletest.com
 #
 # by Olivetti @electroplax
-# https://github.com/Olivetti/Disable-SSLv3-on-Google-Browser-for-OSX
+# https://github.com/Olivetti/Disable-SSLv3-in-Google-Browser-for-OSX
 
 #open -a "$prg" --args --ssl-version-min=tls1
 
