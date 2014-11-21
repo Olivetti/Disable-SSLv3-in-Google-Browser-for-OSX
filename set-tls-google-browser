@@ -25,7 +25,7 @@
 
 [[ "$1" = "-h" ]] && echo "Syntax: ${0##*/} [-h]" && exit 1
 
-[[ -x "$0.bin" ]] && "$0.bin" --ssl-version-min=tls1 && exit 0
+[[ -x "$0.bin" ]] && "$0.bin" --ssl-version-min=tls1 "$@" && exit 0
 
 prg[0]="/Applications/Chromium.app/Contents/MacOS/Chromium"
 prg[1]="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
