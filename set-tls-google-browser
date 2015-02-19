@@ -25,16 +25,16 @@
 
 [[ "$1" = "-h" ]] && echo "Syntax: ${0##*/} [-h]" && exit 1
 
-[[ -x "$0.bin" ]] && "$0.bin" --ssl-version-min=tls1 "$@" && exit 0
+[[ -x "$0.bin" ]] && "$0.bin" --ssl-version-min=tls1 "$@" && exit
 
 prg[0]="/Applications/Chromium.app/Contents/MacOS/Chromium"
 prg[1]="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 for file in "${prg[@]}"
-do
- [[ -x "$file" ]] && file "$file" | grep 'Mach-O' &>/dev/null && \
-  { echo -e "--- \e[31mPreparing ${file##*/}\e[0m ---" && \
-    mv "$file" "$file.bin" && cp "$0" "$file" && chmod 755 "$file" && \
-    echo -e "--- \e[32mDone modifying ${file##*/}\e[0m ---\n" || \
-    echo -e "--- \e[31mFailed modifying ${file##*/}\e[0m ---\n"; }
-done
+ do
+  [[ -x "$file" ]] && file "$file" | grep 'Mach-O' &>/dev/null && \
+   { echo -e "--- \e[31mPreparing ${file##*/}\e[0m ---" && \
+     mv "$file" "$file.bin" && cp "$0" "$file" && chmod 755 "$file" && \
+     echo -e "--- \e[32mDone modifying ${file##*/}\e[0m ---\n" || \
+     echo -e "--- \e[31mFailed modifying ${file##*/}\e[0m ---\n"; }
+ done
